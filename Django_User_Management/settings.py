@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # third apps
     # startapp
     'accounts',
+    'ESGmanager',
 ]
 
 MIDDLEWARE = [
