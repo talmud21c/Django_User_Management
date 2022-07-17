@@ -1,1 +1,10 @@
 <h2>User: {{ user }}</h2>
+
+{% if user.profile %}
+    <ul>
+        <li>{{ user.profile.phone }}</li>
+        <li>{{ user.profile.wallet_addr }}</li>
+    </ul>
+{% endif %}
+
+<a href="{% url "profile_edit" %}">프로필 수정</a>
