@@ -1,0 +1,83 @@
+<!-- activities -->
+
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ESG</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+<body>
+
+<div class="header">
+    <div class="container">
+        <nav class="navbar navbar-expand-sm bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">ESG</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'ESGmanager:activity_list' page_user.username %}">활동내역</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'ESGmanager:total_points' page_user.username %}">통합포인트</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"  href="{% url 'ESGmanager:metamask' page_user.username %}">지갑연동</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="user">
+                    <ul class="navbar-nav">
+                        <li class="nav-item ms-2">{{ page_user.username }}</li>
+                    </ul>
+                </div>
+            </div>
+
+        </nav>
+    </div>
+</div>
+
+<div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center">
+        <h1 class="my-5 text-center">활동내역</h1>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    {% if page_user.username == 'admin' %}
+                    <th scope="col">User</th>
+                    {% endif %}
+                    <th scope="col">Date</th>
+                    <th scope="col">Activity</th>
+                    <th scope="col">Poi</th>
+                </tr>
+            </thead>
+            {% for activity in activity_list %}
+            <tbody class="table-group-divider">
+                <tr>
+                    {% if page_user.username == 'admin' %}
+                        <td>{{ activity.user }}</td>
+                    {% endif %}
+                        <td>{{ activity.datetime }}</td>
+                        <td>{{ activity.activity }}</td>
+                        <td>{{ activity.poi }}</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+</html>

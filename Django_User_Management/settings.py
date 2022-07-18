@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-31&@n6bl8vjl(%ipkoj1u%f=x=x4y^9nm5%1(&g1leb-1h0x)q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.0.50']
 
 
 # Application definition
@@ -86,6 +86,8 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = 'accounts.User'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -121,7 +123,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
