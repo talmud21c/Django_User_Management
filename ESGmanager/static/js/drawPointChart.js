@@ -78,40 +78,40 @@ am5.ready(function () {
 // Set data
     var data = [{
         country: "Jan",
-        value: 100,
+        value: 50,
     }, {
         country: "Feb",
-        value: 100
+        value: 80
     }, {
         country: "Mar",
-        value: 100
+        value: 70
     }, {
         country: "Apr",
-        value: 100
+        value: 90
     }, {
         country: "May",
         value: 100
     }, {
         country: "Jun",
-        value: 100
+        value: 50
     }, {
         country: "Jul",
-        value: 100
+        value: 60
     }, {
         country: "Aug",
-        value: 100
+        value: 90
     }, {
         country: "Sep",
-        value: 100
+        value: 120
     }, {
         country: "Oct",
-        value: 100
+        value: 110
     }, {
         country: "Nov",
         value: 100
     }, {
         country: "Dec",
-        value: 134
+        value: 80
     }];
 
     xAxis.data.setAll(data);

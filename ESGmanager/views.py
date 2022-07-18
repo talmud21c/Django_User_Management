@@ -1,8 +1,12 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import LoginView
 from django.db.models import Sum
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import get_user_model
 from .models import ESGData
+
+
+login = LoginView.as_view(template_name='accounts/index.html')
 
 
 @login_required
