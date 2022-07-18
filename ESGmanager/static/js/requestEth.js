@@ -8,7 +8,7 @@ document.getElementById('connect-button').addEventListener('click', event => {
     };
 
     const connectDeepLink = () => {
-        const dappUrl = "dev-mui.aixcon.biz/metamask";
+        const dappUrl = "dev-mui.aixcon.biz/metamask/admin";
         const metamaskAppDeepLink = "https://metamask.app.link/dapp/" + dappUrl;
         // https://metamask.app.link/dapp/dev-mui.aixcon.biz/metamask
 

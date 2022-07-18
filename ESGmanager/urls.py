@@ -4,7 +4,8 @@ from . import views
 app_name = 'ESGmanager'
 
 urlpatterns = [
+    # path('', views.total_points, name='landing_page'),
     path('activity/<slug:username>/', views.activity_list, name='activity_list'),
     path('totalpoints/<slug:username>/', views.total_points, name='total_points'),
-    path('metamask/<slug:username>/', views.metamask, name='metamask'),
+    path('metamask/<slug:username>', views.metamask, name='metamask'),
 ]
